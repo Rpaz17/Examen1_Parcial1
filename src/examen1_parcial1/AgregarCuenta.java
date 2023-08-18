@@ -17,9 +17,12 @@ public class AgregarCuenta extends javax.swing.JFrame {
      */
 
     Menu menu;
-    public AgregarCuenta(Menu menu) {
+    UberSocial uber;
+    public AgregarCuenta(Menu menu,UberSocial uber) {
         initComponents();
         this.menu = menu;
+        this.uber=uber;
+        
     }
 
     /**
@@ -193,24 +196,28 @@ public class AgregarCuenta extends javax.swing.JFrame {
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         // TODO add your handling code here:
-         String tipo = txtTipo.getText();
+         String tipo = txtTipo.getText().toUpperCase();
         String username = txtUsername.getText();
         if (txtUsername.getText().isEmpty() || txtTipo.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "LLene todos los campos");
         } else {
-            if (tipo.toUpperCase().equals("FACEBOOK") || tipo.toUpperCase().equals("TWITTER")) {
-                boolean agregado = menu.uber.existeUsuario(username);
+            if (tipo.equals("FACEBOOK") || tipo.equals("TWITTER")) {
+                 UberSocial uber=new UberSocial();
+                boolean agregado = uber.existeUsuario(username);
                 if (agregado == false) {
-                    menu.uber.agregarCuenta(username, tipo);
+                    uber.agregarCuenta(username, tipo);
+                    
                     JOptionPane.showMessageDialog(this, "Usuario agregado correctamente");
                     this.setVisible(false);
                     menu.setVisible(true);
                 } else {
                     JOptionPane.showMessageDialog(this, "Usuario ya existe");
                 }
+          }else {
+                JOptionPane.showMessageDialog(this, "Valor incorrecto");
             }
-            JOptionPane.showMessageDialog(this, "Valor incorrecto");
         }
+        
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarMouseClicked

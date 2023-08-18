@@ -164,7 +164,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void btnAgregarCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarCuentaActionPerformed
         // TODO add your handling code here:
-        AgregarCuenta cuenta= new AgregarCuenta(this);
+        AgregarCuenta cuenta= new AgregarCuenta(this,uber);
         cuenta.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAgregarCuentaActionPerformed
