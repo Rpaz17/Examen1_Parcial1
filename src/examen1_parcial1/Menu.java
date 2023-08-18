@@ -41,7 +41,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(0, 153, 153));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
-        jLabel1.setText("Menu");
+        jLabel1.setText("FACEBOOK");
 
         btnAgregarPost.setBackground(new java.awt.Color(153, 153, 0));
         btnAgregarPost.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
@@ -107,50 +107,38 @@ public class Menu extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(157, 157, 157)
-                        .addComponent(btnSalir))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(117, 117, 117)
-                        .addComponent(btnAgregarPost))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(106, 106, 106)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnAgregarAmigo)
-                            .addComponent(btnAgregarCuenta))))
+                .addGap(117, 117, 117)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(58, 98, Short.MAX_VALUE)
+                .addGap(82, 97, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(144, 144, 144))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnAgregarComment)
-                        .addGap(90, 90, 90))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnProfileForm)
-                        .addGap(115, 115, 115))))
+                    .addComponent(btnSalir)
+                    .addComponent(btnProfileForm)
+                    .addComponent(btnAgregarAmigo)
+                    .addComponent(btnAgregarPost)
+                    .addComponent(btnAgregarCuenta)
+                    .addComponent(btnAgregarComment))
+                .addGap(91, 91, 91))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addGap(15, 15, 15)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(44, 44, 44)
                 .addComponent(btnAgregarCuenta)
-                .addGap(30, 30, 30)
+                .addGap(18, 18, 18)
                 .addComponent(btnAgregarPost)
-                .addGap(27, 27, 27)
+                .addGap(18, 18, 18)
                 .addComponent(btnAgregarAmigo)
-                .addGap(31, 31, 31)
+                .addGap(29, 29, 29)
                 .addComponent(btnAgregarComment)
-                .addGap(26, 26, 26)
+                .addGap(18, 18, 18)
                 .addComponent(btnProfileForm)
-                .addGap(38, 38, 38)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnSalir)
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(101, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -165,19 +153,13 @@ public class Menu extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnAgregarPostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarPostActionPerformed
-        // TODO add your handling code here:
-        AgregarPost post= new AgregarPost();
-        post.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnAgregarPostActionPerformed
 
     private void btnAgregarCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarCuentaActionPerformed
         // TODO add your handling code here:
@@ -185,6 +167,22 @@ public class Menu extends javax.swing.JFrame {
         cuenta.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAgregarCuentaActionPerformed
+
+    private void btnSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseClicked
+
+        this.setVisible(false);
+    }//GEN-LAST:event_btnSalirMouseClicked
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnAgregarPostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarPostActionPerformed
+        // TODO add your handling code here:
+        AgregarPost post= new AgregarPost();
+        post.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnAgregarPostActionPerformed
 
     private void btnAgregarAmigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarAmigoActionPerformed
         // TODO add your handling code here:
@@ -200,18 +198,9 @@ public class Menu extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnAgregarCommentActionPerformed
 
-    private void btnSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseClicked
-
-        this.setVisible(false);
-    }//GEN-LAST:event_btnSalirMouseClicked
-
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnSalirActionPerformed
-
     private void btnProfileFormActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfileFormActionPerformed
         // TODO add your handling code here:
-       ProfileForm profile= new ProfileForm();
+        ProfileForm profile= new ProfileForm();
         profile.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnProfileFormActionPerformed
