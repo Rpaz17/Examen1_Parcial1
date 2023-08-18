@@ -188,7 +188,6 @@ public class AgregarAmigo extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Casillas vacias");
         }else if(user1!=user2){
             menu.uber.agregarAmigo(user1, user2);
-             JOptionPane.showMessageDialog(this, "Se agrego el amigo correctamente");
              this.setVisible(false);
              menu.setVisible(true);
         }

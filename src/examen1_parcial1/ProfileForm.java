@@ -4,17 +4,21 @@
  */
 package examen1_parcial1;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Azalia
  */
 public class ProfileForm extends javax.swing.JFrame {
 
+    UberSocial uber;
     /**
      * Creates new form ProfileForm
      */
-    public ProfileForm() {
+    public ProfileForm(UberSocial uber) {
         initComponents();
+        this.uber=uber;
     }
 
     /**
@@ -145,49 +149,31 @@ public class ProfileForm extends javax.swing.JFrame {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
-        Menu menu = new Menu();
+        Menu menu = new Menu(uber);
         menu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnImprimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimeActionPerformed
-        // TODO add your handling code here:
+        String usuario=txtUser.getText();
+        if(txtUser.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Ingrese el usuario.");
+        }else{
+            if(uber.existeUsuario(usuario) == true){
+        uber.profileFrom(usuario+"\n");
+                
+            }else{
+                JOptionPane.showMessageDialog(null, "El usuario no existe.");
+            }
+        }
+        
+        
+        
     }//GEN-LAST:event_btnImprimeActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ProfileForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ProfileForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ProfileForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ProfileForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ProfileForm().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;

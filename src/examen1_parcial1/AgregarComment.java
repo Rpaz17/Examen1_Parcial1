@@ -4,17 +4,21 @@
  */
 package examen1_parcial1;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Azalia
  */
 public class AgregarComment extends javax.swing.JFrame {
+UberSocial uber;
 
     /**
      * Creates new form AgregarComment
      */
-    public AgregarComment() {
+    public AgregarComment(UberSocial uber) {
         initComponents();
+        this.uber=uber;
     }
 
     /**
@@ -194,7 +198,23 @@ public class AgregarComment extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserActionPerformed
-        // TODO add your handling code here:
+        
+       
+       if(txtUser.getText().isEmpty() || txtPostID.getText().isEmpty() || txtAuthor.getText().isEmpty() || txtComment.getText().isEmpty()){
+           JOptionPane.showMessageDialog(null, "Llene todos los espacios.");
+       }else{
+       String user = txtUser.getText();
+       int postID = Integer.parseInt(txtPostID.getText());
+       String autor = txtAuthor.getText();
+       String comment = txtComment.getText();
+           
+       uber.agregarComment(user, postID, autor, comment);
+       JOptionPane.showMessageDialog(null, "Comment agregado correctamente.");
+       }
+           
+       
+       
+
     }//GEN-LAST:event_txtUserActionPerformed
 
     private void txtPostIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPostIDActionPerformed
@@ -207,7 +227,7 @@ public class AgregarComment extends javax.swing.JFrame {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
-        Menu menu = new Menu();
+        Menu menu = new Menu(uber);
         menu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
@@ -223,37 +243,6 @@ public class AgregarComment extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AgregarComment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AgregarComment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AgregarComment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AgregarComment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AgregarComment().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;

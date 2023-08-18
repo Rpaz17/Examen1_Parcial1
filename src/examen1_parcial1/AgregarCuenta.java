@@ -202,7 +202,6 @@ public class AgregarCuenta extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "LLene todos los campos");
         } else {
             if (tipo.equals("FACEBOOK") || tipo.equals("TWITTER")) {
-                 UberSocial uber=new UberSocial();
                 boolean agregado = uber.existeUsuario(username);
                 if (agregado == false) {
                     uber.agregarCuenta(username, tipo);
