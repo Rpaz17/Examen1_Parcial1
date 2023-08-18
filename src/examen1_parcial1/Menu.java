@@ -174,29 +174,29 @@ public class Menu extends javax.swing.JFrame {
 
     private void btnAgregarPostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarPostActionPerformed
         // TODO add your handling code here:
-        BuscarItem buscar= new BuscarItem();
-        buscar.setVisible(true);
+        AgregarPost post= new AgregarPost();
+        post.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAgregarPostActionPerformed
 
     private void btnAgregarCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarCuentaActionPerformed
         // TODO add your handling code here:
-        AgregarItem agregar= new AgregarItem();
-        agregar.setVisible(true);
+        AgregarCuenta cuenta= new AgregarCuenta();
+        cuenta.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAgregarCuentaActionPerformed
 
     private void btnAgregarAmigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarAmigoActionPerformed
         // TODO add your handling code here:
-        Rentar rentar= new Rentar();
-        rentar.setVisible(true);
+        AgregarAmigo amigo= new AgregarAmigo();
+        amigo.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAgregarAmigoActionPerformed
 
     private void btnAgregarCommentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarCommentActionPerformed
         // TODO add your handling code here:
-        AuditarMovieEstado auditar= new AuditarMovieEstado();
-        auditar.setVisible(true);
+        AgregarComment comment= new AgregarComment();
+        comment.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAgregarCommentActionPerformed
 
@@ -211,6 +211,9 @@ public class Menu extends javax.swing.JFrame {
 
     private void btnProfileFormActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfileFormActionPerformed
         // TODO add your handling code here:
+       ProfileForm profile= new ProfileForm();
+        profile.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnProfileFormActionPerformed
 
     /**
