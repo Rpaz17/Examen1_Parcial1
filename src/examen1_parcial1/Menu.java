@@ -13,6 +13,7 @@ public class Menu extends javax.swing.JFrame {
     /**
      * Creates new form Menu
      */
+    UberSocial uber;
     public Menu() {
         initComponents();
     }
@@ -163,7 +164,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void btnAgregarCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarCuentaActionPerformed
         // TODO add your handling code here:
-        AgregarCuenta cuenta= new AgregarCuenta();
+        AgregarCuenta cuenta= new AgregarCuenta(this);
         cuenta.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAgregarCuentaActionPerformed
@@ -186,7 +187,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void btnAgregarAmigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarAmigoActionPerformed
         // TODO add your handling code here:
-        AgregarAmigo amigo= new AgregarAmigo();
+        AgregarAmigo amigo= new AgregarAmigo(this);
         amigo.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAgregarAmigoActionPerformed

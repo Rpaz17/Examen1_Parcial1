@@ -4,6 +4,8 @@
  */
 package examen1_parcial1;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Azalia
@@ -13,8 +15,11 @@ public class AgregarCuenta extends javax.swing.JFrame {
     /**
      * Creates new form AgregarCuenta
      */
-    public AgregarCuenta() {
+
+    Menu menu;
+    public AgregarCuenta(Menu menu) {
         initComponents();
+        this.menu = menu;
     }
 
     /**
@@ -91,7 +96,7 @@ public class AgregarCuenta extends javax.swing.JFrame {
         });
 
         txtTipos1.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        txtTipos1.setText("(Facebook o Twitter)");
+        txtTipos1.setText("(FACEBOOK/TWITTER)");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -177,62 +182,44 @@ public class AgregarCuenta extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUsernameActionPerformed
 
     private void txtTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTipoActionPerformed
-       
+
     }//GEN-LAST:event_txtTipoActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
-        Menu menu = new Menu();
         menu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         // TODO add your handling code here:
+         String tipo = txtTipo.getText();
+        String username = txtUsername.getText();
+        if (txtUsername.getText().isEmpty() || txtTipo.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "LLene todos los campos");
+        } else {
+            if (tipo.toUpperCase().equals("FACEBOOK") || tipo.toUpperCase().equals("TWITTER")) {
+                boolean agregado = menu.uber.existeUsuario(username);
+                if (agregado == false) {
+                    menu.uber.agregarCuenta(username, tipo);
+                    JOptionPane.showMessageDialog(this, "Usuario agregado correctamente");
+                    this.setVisible(false);
+                    menu.setVisible(true);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Usuario ya existe");
+                }
+            }
+            JOptionPane.showMessageDialog(this, "Valor incorrecto");
+        }
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarMouseClicked
-        String tipo = txtTipo.getText();
-        String username = txtUsername.getText();
-        if(tipo.toUpperCase().equals( "FACEBOOK" )|| tipo.toUpperCase().equals("TWITTER")){
-            
-        }
+
     }//GEN-LAST:event_btnAgregarMouseClicked
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AgregarCuenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AgregarCuenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AgregarCuenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AgregarCuenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AgregarCuenta().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;

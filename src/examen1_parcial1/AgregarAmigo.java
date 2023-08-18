@@ -4,6 +4,8 @@
  */
 package examen1_parcial1;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Azalia
@@ -13,8 +15,12 @@ public class AgregarAmigo extends javax.swing.JFrame {
     /**
      * Creates new form AgregarAmigo
      */
-    public AgregarAmigo() {
+    Menu menu;
+
+    public AgregarAmigo(Menu menu) {
         initComponents();
+        this.menu = menu;
+        this.setLocationRelativeTo(this);
     }
 
     /**
@@ -78,6 +84,11 @@ public class AgregarAmigo extends javax.swing.JFrame {
         btnAgregar.setBackground(new java.awt.Color(153, 153, 0));
         btnAgregar.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
         btnAgregar.setText("Agregar");
+        btnAgregar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAgregarMouseClicked(evt);
+            }
+        });
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarActionPerformed(evt);
@@ -161,7 +172,6 @@ public class AgregarAmigo extends javax.swing.JFrame {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
-        Menu menu = new Menu();
         menu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
@@ -170,40 +180,20 @@ public class AgregarAmigo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAgregarActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AgregarAmigo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AgregarAmigo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AgregarAmigo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AgregarAmigo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    private void btnAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarMouseClicked
+        // TODO add your handling code here:
+        String user1 = txtUser1.getText();
+        String user2 = txtUser2.getText();
+        if (user1.isEmpty() || user2.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Casillas vacias");
+        }else if(user1!=user2){
+            menu.uber.agregarAmigo(user1, user2);
+             JOptionPane.showMessageDialog(this, "Se agrego el amigo correctamente");
+             this.setVisible(false);
+             menu.setVisible(true);
         }
-        //</editor-fold>
+    }//GEN-LAST:event_btnAgregarMouseClicked
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AgregarAmigo().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;

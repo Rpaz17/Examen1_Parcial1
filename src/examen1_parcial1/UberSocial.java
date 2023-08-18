@@ -36,7 +36,7 @@ public class UberSocial {
         }
     }
 
-    private boolean existeUsuario(String username) {
+    public boolean existeUsuario(String username) {
         for (SocialClass account : socialAccounts) {
             if (account.getUsername().equals(username)) {
                 return true;
