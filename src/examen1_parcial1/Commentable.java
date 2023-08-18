@@ -6,4 +6,5 @@ package examen1_parcial1;
  */
 public interface Commentable {
     
+    boolean addComment(Comment comment);
 }
