@@ -17,7 +17,7 @@ public final class Comment {
     }
     
     public String print(){
-        String imprimir = autor+" - "+fecha
+        String imprimir = autor.toUpperCase()+" - "+fecha
                 +"\n"+contenidoComentario;
         
         return imprimir;
