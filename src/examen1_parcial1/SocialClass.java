@@ -1,6 +1,7 @@
 package examen1_parcial1;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -35,6 +36,7 @@ public abstract class SocialClass {
     public abstract void timeline();
    
     public void myProfile(){
+        JOptionPane.showMessageDialog(null, "Username: "+username, "USER",JOptionPane.INFORMATION_MESSAGE);
         System.out.println("Username: "+username);
         timeline();
         contadorAmigos=0;
@@ -50,5 +52,14 @@ public abstract class SocialClass {
         }
         
     }
+
+    public String getUsername() {
+        return username;
+    }
+    
+    
+    
+    
+    
     
 }
