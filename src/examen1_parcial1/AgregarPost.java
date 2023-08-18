@@ -38,7 +38,7 @@ public class AgregarPost extends javax.swing.JFrame {
         btnBack = new javax.swing.JButton();
         btnAgregar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtPost = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -81,9 +81,9 @@ public class AgregarPost extends javax.swing.JFrame {
             }
         });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtPost.setColumns(20);
+        txtPost.setRows(5);
+        jScrollPane1.setViewportView(txtPost);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -169,6 +169,11 @@ public class AgregarPost extends javax.swing.JFrame {
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         // TODO add your handling code here:
+        String user=txtUser.getText();
+        String post=txtPost.getText();
+        
+        uber.agregarPost(user, post);
+        
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     /**
@@ -184,7 +189,7 @@ public class AgregarPost extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea txtPost;
     private javax.swing.JLabel txtTipos;
     private javax.swing.JTextField txtUser;
     // End of variables declaration//GEN-END:variables
