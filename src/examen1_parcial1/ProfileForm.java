@@ -160,15 +160,12 @@ public class ProfileForm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Ingrese el usuario.");
         }else{
             if(uber.existeUsuario(usuario) == true){
-        uber.profileFrom(usuario+"\n");
+        uber.profileFrom(usuario);
                 
             }else{
                 JOptionPane.showMessageDialog(null, "El usuario no existe.");
             }
         }
-        
-        
-        
     }//GEN-LAST:event_btnImprimeActionPerformed
 
     /**

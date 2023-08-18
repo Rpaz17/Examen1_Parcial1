@@ -96,27 +96,25 @@ public class UberSocial {
             JOptionPane.showMessageDialog(null, "No existe ese user.");
         }
         if (cuentaUser != null && cuentaUser instanceof Facebook) {
-            cuentaUser.addPost(comment + "\nAutor: "+autor+"\nPost ID: "+postID);
+            cuentaUser.addPost(comment + "\nAutor: " + autor + "\nPost ID: " + postID);
 
         }
     }
-    
-    public void profileFrom(String user){
-         SocialClass cuentaUser = null;
+
+    public void profileFrom(String user) {
+        SocialClass cuentaUser = null;
         if (existeUsuario(user) == true) {
             for (SocialClass cuenta : socialAccounts) {
                 if (cuenta.getUsername().equals(user)) {
                     cuentaUser = cuenta;
+                    cuentaUser.myProfile();
                 }
             }
-            cuentaUser.myProfile();
-            
+
         } else {
             JOptionPane.showMessageDialog(null, "No existe ese user.");
         }
-        
-        
+
     }
 
-    
 }

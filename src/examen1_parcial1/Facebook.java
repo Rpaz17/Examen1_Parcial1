@@ -38,7 +38,6 @@ public class Facebook extends SocialClass implements Commentable {
                 }
             }
         }
-        JOptionPane.showMessageDialog(null, post, "POSTS", JOptionPane.INFORMATION_MESSAGE);
     }
 
 }

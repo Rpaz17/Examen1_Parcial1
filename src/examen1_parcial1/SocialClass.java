@@ -38,14 +38,12 @@ public abstract class SocialClass {
     public void myProfile() {
         String seimprimira;
         seimprimira = "Username: " + username;
-        timeline();
         contadorAmigos = 0;
 
         for (String friends1 : friends) {
-            seimprimira = seimprimira + friends1 + " ";
+            seimprimira = seimprimira +"\nAmigos: "+friends1 +" - ";
             contadorAmigos = contadorAmigos + 1;
             if (contadorAmigos >= 10) {
-                System.out.println("\n");
                 contadorAmigos = 0;
             }
 
